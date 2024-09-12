@@ -1,0 +1,145 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+:root {
+
+    /* ## Colors */
+    
+    /* ### Primary */
+    --Dark-cyan: hsl(158, 36%, 37%);
+    --Cream: hsl(30, 38%, 92%);
+
+    /* ### Neutral */
+    --Very-dark-blue: hsl(212, 21%, 14%);
+    --Dark-grayish-blue: hsl(228, 12%, 48%);
+    --White: hsl(0, 0%, 100%);
+
+
+
+    /* ### Font */
+
+    --Fraunces: "Fraunces", serif; 
+    --Montserrat: "Montserrat",         sans-serif;
+}
+
+body {
+    min-height: 100dvh;
+    background-color: var(--Cream);
+    margin: 0;
+    padding: 1.2em 0;
+    display: flex;
+    align-items: center;
+    font-family: var(--Montserrat);
+}
+
+img {
+    max-inline-size: 100%;
+}
+
+ h1, p {
+    margin-top: 0;
+} 
+
+.card {
+    width: 85%;
+    max-inline-size: 22rem;
+    margin-inline: auto;
+    background: var(--White);
+    
+    border-top-left-radius: .5em;
+    border-top-right-radius: .5em;
+    overflow: hidden;
+    
+}
+
+
+.card__detail-div {
+    padding: 1em;
+}
+
+.card__product-name {
+    text-transform: uppercase;
+    font-size: .75rem;
+    letter-spacing: .2em;
+    color: var(--Dark-grayish-blue);
+}
+
+.card__title {
+    font-family: var(--Fraunces);
+    line-height: 1;
+    color: var(--Very-dark-blue);
+}
+
+.card__description {
+    font-size: .94rem;
+    line-height: 1.5;
+    color: var(--Dark-grayish-blue);
+}
+
+.card__price-div {
+    display: flex;
+    align-items: center;
+    gap: .8em;
+}
+
+.new-price {
+    color: var(--Dark-cyan);
+    font-family: var(--Fraunces);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.old-price {
+    font-size: .8rem;
+    color: var(--Dark-grayish-blue);
+    text-decoration: line-through;
+}
+
+.card__btn {
+    background: var(--Dark-cyan);
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    font-family: inherit;
+    gap: .5rem;
+    padding: 1.1em 0;
+    margin-block-start: 1em;
+    border-radius: .8em;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.card__btn:hover{
+    background: hsl(157, 94%, 13%);
+}
+
+.card__btn:active {
+    background-color: hsl(158, 91%, 8%);
+}
+
+
+@media (min-width: 600px) {
+    .card {
+        display: flex;
+        max-width: 500px;
+        border-radius: .5em;
+    }
+
+    .card__img {
+        display: none;
+    }
+
+    .card__img-div {
+        flex: 1;
+        background: url(images/image-product-desktop.jpg) no-repeat center;
+        background-size: cover;
+    }
+
+    .card__detail-div {
+        flex: 1;
+    }
+}
